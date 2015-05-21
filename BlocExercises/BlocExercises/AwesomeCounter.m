@@ -12,22 +12,15 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     
-    NSInteger i;
     NSMutableString *numberString = [NSMutableString string];
+    NSInteger min = MIN(number, otherNumber);
+    NSInteger max = MAX(number, otherNumber);
     
-    if (number < otherNumber) {
-        for (i = number; i <= otherNumber; i++) {
-            [numberString appendFormat:@"%ld", i];
-        }
-    } else if (number > otherNumber) {
-        for (i = otherNumber; i <= number; i++) {
-            [numberString appendFormat:@"%ld", i];
-        }
-    } else {
-        [numberString appendFormat:@"%ld", number];
+    for (NSInteger i = min; i <= max; i++) {
+        [numberString appendFormat:@"%ld", i];
     }
     
-    return @"%@", numberString;
+    return numberString;
     
 }
 
