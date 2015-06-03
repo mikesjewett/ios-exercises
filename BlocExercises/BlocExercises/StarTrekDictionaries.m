@@ -11,18 +11,34 @@
 @implementation StarTrekDictionaries
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @"";
+    NSString *favDrink = characterDictionary[@"favorite drink"];
+    if (favDrink != nil && [favDrink isKindOfClass:[NSString class]]) {
+        return favDrink;
+    } else {
+        return nil;
+    }
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
-    /* WORK HERE */
-    return @[];
+    NSMutableArray *favDrinks = [NSMutableArray array];
+    
+    for (NSDictionary *characterDictionary in charactersArray) {
+        [favDrinks addObject:characterDictionary[@"favorite drink"]];
+    }
+    
+    return favDrinks;
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @{};
+    
+    NSMutableDictionary *mutableDictionary = [characterDictionary mutableCopy];
+    if (mutableDictionary[@"quote"] == nil) {
+        mutableDictionary[@"quote"] = @"Let's throw another shrimp on the barby!";
+        return mutableDictionary;
+    } else {
+        NSLog(@"No quote needed.");
+        return characterDictionary;
+    }
 }
 
 @end
