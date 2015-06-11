@@ -111,6 +111,4 @@ let reversed = sorted(cerealArray, { (s1: String, s2: String) -> Bool in
     return count(s1) < count(s2)
 })
 
-let imagePath = "/Users/mike/code/ios-exercises/Resources/jp.png"
-let image = UIImage(named: imagePath)
 
