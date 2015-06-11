@@ -7,13 +7,12 @@ Strings
 */
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
-    // WORK HERE
-    return cheese
+    return "My favorite cheese is \(cheese)."
 }
 
 var fullSentence = favoriteCheeseStringWithCheese("cheddar")
 // Make fullSentence say "My favorite cheese is cheddar."
-fullSentence = "My favorite cheese is \(fullSentence)."
+
 
 /*
 
@@ -88,14 +87,11 @@ let strings = ["milk", "eggs", "bread", "challah"]
 // WORK HERE - make your function and pass `strings` in
 func takeStrings(strings:Array<String>) -> String {
     
-    var newString:String = ""
+    return  ";".join(strings)
     
-    for string in strings {
-        newString += string+";"
-    }
-
-    return newString
 }
+
+takeStrings(strings)
 
 let expectedOutput = "milk;eggs;bread;challah"
 
@@ -110,4 +106,11 @@ let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All
 // Use a closure to sort this array alphabetically
 
 let cerealSorted = sorted(cerealArray, <)
+
+let reversed = sorted(cerealArray, { (s1: String, s2: String) -> Bool in
+    return count(s1) < count(s2)
+})
+
+let imagePath = "/Users/mike/code/ios-exercises/Resources/jp.png"
+let image = UIImage(named: imagePath)
 
